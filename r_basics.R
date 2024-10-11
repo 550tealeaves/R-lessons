@@ -134,7 +134,7 @@ View(mtcars) # will show the spreadsheet in new tab
 ?mtcars # can get more info about this dataframe 
 
 # Libraries
-# install.packages("tidyverse")
+#install.packages("tidyverse")
 # remember to comment the install.packages code
 # after you install the packages
 library(tidyverse) #does data cleaning, visualization etc
@@ -289,10 +289,14 @@ student_above78 <- student_scores %>%
   filter(English > 78)
 student_above78
 
+print(student_above78)
+
 # how about getting the spreadsheet of students
 # whose English scores are above 78 AND maths scores are above 88?
 student_above <- student_scores %>% 
   filter(English > 78 & Maths > 88)
+
+print(student_above)
 
 ### Exercise 5 ###
 # get a spreadsheet of students whose
