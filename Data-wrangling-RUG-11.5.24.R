@@ -155,7 +155,31 @@ options(iris.print_max = 5, iris.print_min = 4) # doesn't work
 options(as_tibble.print_max = 5, as_tibble.print_min = 4) # doesn't work
 
 
+# Subsetting - If you want to pull out a single variable, you need some new tools, $ and [[. [[ can extract by name or position; $ only extracts by name but is a little less typing.
 
+df <- tibble(
+  x = runif(5),
+  y = rnorm(5)
+)
+
+# Extract by name
+df$x # 1st way using $
+# [1] 0.4937181 0.6419219 0.2283004 0.8165819 0.3421326
+
+
+df[["x"]]  # 2nd way using [[]]
+# [1] 0.4937181 0.6419219 0.2283004 0.8165819 0.3421326
+
+
+# Extract by position
+df[[1]]
+# [1] 0.4937181 0.6419219 0.2283004 0.8165819 0.3421326
+
+# To use these in a pipe, you’ll need to use the special placeholder .:
+df %>% .$x
+# [1] 0.4937181 0.6419219 0.2283004 0.8165819 0.3421326
+df %>% .[["x"]]
+# [1] 0.4937181 0.6419219 0.2283004 0.8165819 0.3421326
 
 
 
