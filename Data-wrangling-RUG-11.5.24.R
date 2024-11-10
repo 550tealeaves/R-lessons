@@ -52,14 +52,83 @@ tibble(x = 1:5, # X-col will run from 1-5
 # Tibble can have col names that are not valid R variable names aka non-syntactic names (ex: don't begin w/ letter or have spaces)
 # Use backticks on these names to reference the variables
 
-tb <- tibble
+tb <- tibble(
+  `:)` = "smile",
+  ` ` = "space", 
+  `2000` = "number"
+)
+
+tb  #call the tibble 
+
+# # A tibble: 1 × 3
+# `:)`  ` `   `2000`
+# <chr> <chr> <chr> 
+#   1 smile space number
+
+
+## TRIBBLE - transposed tibble - customized for data entry in code
+# Column headings are defined by formulas **(start w/ ~)** & commas separate entries 
+# makes small amount data easily readable 
+
+tribble(
+  ~x, ~y, ~z,  #col headings that start w/ ~
+  #--|--|----
+  "a", 2, 3.6,  #x-col=a, y-col=2, z-col=3.6
+  "b", 1, 8.5,  #x-col=b, y-col=1, z-col=8.5
+  "c", 7, -9.2  #x-col=c, y-col=7, z-col=-9.2 
+)
+
+# A tibble: 3 × 3
+# x         y     z
+# <chr> <dbl> <dbl>
+#   1 a         2   3.6
+# 2 b         1   8.5
+# 3 c         7  -9.2
+
+
+#### PRINTING TIBBLE ####
+# print function shows 1st 10 rows & all columns that fit on screen
+# prints each col type
+# much easier to work w/ large data
+
+tibble( # variables are col names
+  a = lubridate::now() + runif(1e3) * 86400,
+  b = lubridate::today() + runif(1e3) * 30, 
+  c = 1:1e3,
+  d = runif(1e3),
+  e = sample(letters, 1e3, replace = TRUE)
+)
+
+# A tibble: 1,000 × 5
+# a                   b              c      d e    
+# <dttm>              <date>     <int>  <dbl> <chr> #COLUMN DATA TYPES
+#   1 2024-11-10 09:27:20 2024-11-15     1 0.295  f    
+# 2 2024-11-10 21:19:00 2024-11-18     2 0.176  k    
+# 3 2024-11-10 08:07:31 2024-11-09     3 0.623  x    
+# 4 2024-11-10 13:50:38 2024-11-15     4 0.294  b    
+# 5 2024-11-09 23:10:29 2024-11-14     5 0.826  x    
+# 6 2024-11-10 17:19:21 2024-11-11     6 0.816  j    
+# 7 2024-11-10 09:19:21 2024-11-28     7 0.956  j    
+# 8 2024-11-10 16:33:50 2024-11-27     8 0.708  j    
+# 9 2024-11-10 22:18:15 2024-12-08     9 0.753  z    
+# 10 2024-11-10 19:00:10 2024-12-08    10 0.0849 s    
+# ℹ 990 more rows
+# ℹ Use `print(n = ...)` to see more rows
 
 
 
 
+# Can control # of rows of data printed out so you don't break console
+# nycflights13::flights %>% 
+#   print(n = 10, width = Inf)  #will print out first 10 rows
 
+options(tibble.print_max = n, tibble.print_min = m)
 
+# Use this to print ALL rows
+options(tibble.print_min = Inf)
 
+# Use this to print ALL columns
+options(tibble.width = Inf)
 
 
 
@@ -80,6 +149,10 @@ as_tibble(iris)
 # 10          4.9         3.1          1.5         0.1 setosa 
 # # ℹ 140 more rows
 # # ℹ Use `print(n = ...)` to see more rows
+
+
+options(iris.print_max = 5, iris.print_min = 4) # doesn't work
+options(as_tibble.print_max = 5, as_tibble.print_min = 4) # doesn't work
 
 
 
