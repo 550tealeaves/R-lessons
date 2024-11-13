@@ -224,6 +224,15 @@ spotify %>%
 #group_by() takes a data frame and then the names of one or more columns in the data frame. 
 
 #R has a set of datasets that you can use to demo with
+
+# data() will show the list of built-in datasets for testing
+data()
+
+#load datasets - and view the first few rows
+data(Titanic) #seems optional
+head(Titanic)
+
+
 summary(iris)
 head(iris)
 summary(beaver1)
