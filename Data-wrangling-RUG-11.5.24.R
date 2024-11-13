@@ -199,4 +199,28 @@ spotify %>%
 
 #group_by() takes a data frame and then the names of one or more columns in the data frame. 
 
+#R has a set of datasets that you can use to demo with
+summary(iris)
+head(iris)
+summary(beaver1)
+head(beaver1)
+summary(beaver2)
+head(beaver2)
+summary(mdeaths)
+head(mdeaths)
 
+#Monthly Deaths from Lung Diseases in the UK
+summary(fdeaths)
+head(fdeaths)
+summary(ldeaths)
+head(ldeaths)
+
+#Plot
+require(stats); require(graphics) # for time
+plot(ldeaths)
+plot(mdeaths, fdeaths)
+## Better labels:
+yr <- floor(tt <- time(mdeaths))
+#mdeaths on X-axis, fdeaths on Y-axis
+plot(mdeaths, fdeaths,
+     xy.labels = paste(month.abb[12*(tt - yr)], yr-1900, sep = "'"))
