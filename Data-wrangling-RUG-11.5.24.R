@@ -234,6 +234,8 @@ head(Titanic)
 head(rivers)
 summary(rivers)
 head(occupationalStatus, 3)
+head(occupationalStatus)
+head(occupationalStatus, 8)
 summary(occupationalStatus)
 
 
