@@ -231,6 +231,11 @@ data()
 #load datasets - and view the first few rows
 data(Titanic) #seems optional
 head(Titanic)
+head(rivers)
+summary(rivers)
+head(occupationalStatus, 3)
+summary(occupationalStatus)
+
 
 
 summary(iris)
