@@ -237,6 +237,8 @@ head(occupationalStatus, 3)
 head(occupationalStatus)
 head(occupationalStatus, 8)
 summary(occupationalStatus)
+data(HairEyeColor)
+head(HairEyeColor, 9)
 
 
 
@@ -245,7 +247,56 @@ head(iris)
 summary(beaver1)
 head(beaver1)
 summary(beaver2)
+print(beaver2) #prints entire dataset
+# use dim() to get dimension of dataset
+cat("\nDimension:" , dim(beaver2)) # 100 4 (100 rows, 4 cols)
+# use nrow() to get number of rows
+cat("\nRow:" ,nrow(beaver2)) #100
+# use ncol() to get number of columns
+cat("\nColumn:" ,ncol(beaver2)) #4
+# use names() to get name of variable of dataset
+cat("\nName of variables:" ,names((beaver2))) # day, time, temp, activ
+
+# Display all values of specific variable, use $ operator & var name
+print(beaver2$temp)
+#   [1] 36.58 36.73 36.93 37.15 37.23 37.24 37.24 36.90 36.95 36.89 36.95 37.00
+#  [13] 36.90 36.99 36.99 37.01 37.04 37.04 37.14 37.07 36.98 37.01 36.97 36.97
+#  [25] 37.12 37.13 37.14 37.15 37.17 37.12 37.12 37.17 37.28 37.28 37.44 37.51
+#  [37] 37.64 37.51 37.98 38.02 38.00 38.24 38.10 38.24 38.11 38.02 38.11 38.01
+#  [49] 37.91 37.96 38.03 38.17 38.19 38.18 38.15 38.04 37.96 37.84 37.83 37.84
+#  [61] 37.74 37.76 37.76 37.64 37.63 38.06 38.19 38.35 38.25 37.86 37.95 37.95
+#  [73] 37.76 37.60 37.89 37.86 37.71 37.78 37.82 37.76 37.81 37.84 38.01 38.10
+#  [85] 38.15 37.92 37.64 37.70 37.46 37.41 37.46 37.56 37.55 37.75 37.76 37.73
+#  [97] 37.77 38.01 38.04 38.07
+
+# Sorts values in temp variable in ascending order
+sort(beaver2$temp)
+#   [1] 36.58 36.73 36.89 36.90 36.90 36.93 36.95 36.95 36.97 36.97 36.98 36.99
+#  [13] 36.99 37.00 37.01 37.01 37.04 37.04 37.07 37.12 37.12 37.12 37.13 37.14
+#  [25] 37.14 37.15 37.15 37.17 37.17 37.23 37.24 37.24 37.28 37.28 37.41 37.44
+#  [37] 37.46 37.46 37.51 37.51 37.55 37.56 37.60 37.63 37.64 37.64 37.64 37.70
+#  [49] 37.71 37.73 37.74 37.75 37.76 37.76 37.76 37.76 37.76 37.77 37.78 37.81
+#  [61] 37.82 37.83 37.84 37.84 37.84 37.86 37.86 37.89 37.91 37.92 37.95 37.95
+#  [73] 37.96 37.96 37.98 38.00 38.01 38.01 38.01 38.02 38.02 38.03 38.04 38.04
+#  [85] 38.06 38.07 38.10 38.10 38.11 38.11 38.15 38.15 38.17 38.18 38.19 38.19
+#  [97] 38.24 38.24 38.25 38.35
+
+
+# Can get summary stats for specific variables using $
+summary(beaver2$temp)
+#  Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#   36.58   37.15   37.73   37.60   37.98   38.35
+
+
 head(beaver2)
+#   day time  temp activ
+# 1 307  930 36.58     0
+# 2 307  940 36.73     0
+# 3 307  950 36.93     0
+# 4 307 1000 37.15     0
+# 5 307 1010 37.23     0
+# 6 307 1020 37.24     0
+
 summary(mdeaths)
 head(mdeaths)
 
@@ -264,3 +315,9 @@ yr <- floor(tt <- time(mdeaths))
 #mdeaths on X-axis, fdeaths on Y-axis
 plot(mdeaths, fdeaths,
      xy.labels = paste(month.abb[12*(tt - yr)], yr-1900, sep = "'"))
+
+
+#Creates an examples log plots
+example("plot")
+
+
