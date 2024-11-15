@@ -231,21 +231,31 @@ data()
 #load datasets - and view the first few rows
 data(Titanic) #seems optional
 head(Titanic)
+View(Titanic)
+
 head(rivers)
 summary(rivers)
+
 head(occupationalStatus, 3)
 head(occupationalStatus)
+View(occupationalStatus)
 head(occupationalStatus, 8)
 summary(occupationalStatus)
+
 data(HairEyeColor)
 head(HairEyeColor, 9)
+View(HairEyeColor)
 
 
 
 summary(iris)
 head(iris)
+View(iris)
+
 summary(beaver1)
 head(beaver1)
+View(beaver1)
+View(beaver2)
 summary(beaver2)
 print(beaver2) #prints entire dataset
 # use dim() to get dimension of dataset
@@ -299,12 +309,15 @@ head(beaver2)
 
 summary(mdeaths)
 head(mdeaths)
+View(mdeaths)
 
 #Monthly Deaths from Lung Diseases in the UK
 summary(fdeaths)
 head(fdeaths)
+View(fdeaths)
 summary(ldeaths)
 head(ldeaths)
+View(ldeaths)
 
 #Plot
 require(stats); require(graphics) # for time
