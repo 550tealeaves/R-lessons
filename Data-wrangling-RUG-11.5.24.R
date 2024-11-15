@@ -319,5 +319,3 @@ plot(mdeaths, fdeaths,
 
 #Creates an examples log plots
 example("plot")
-
-
