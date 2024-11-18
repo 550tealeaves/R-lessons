@@ -491,7 +491,7 @@ iris %>% arrange(pick(starts_with("Sepal")))
 # 148          7.7         3.0          6.1         2.3  virginica
 # 149          7.7         3.8          6.7         2.2  virginica
 # 150          7.9         3.8          6.4         2.0  virginica
-> 
+
 
 
 # Can get summary stats for specific variables using $
